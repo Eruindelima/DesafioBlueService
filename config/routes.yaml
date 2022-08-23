@@ -1,0 +1,12 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+
+hello:
+    path: /hello
+    controller: App\Controller\HelloController::index
+
+helloname:
+    path: /helloname/{name}
+    controller: App\Controller\HelloController::helloname
