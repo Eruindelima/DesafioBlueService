@@ -14,6 +14,10 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/admin/caracteristicas' => [[['_route' => 'app_caracteristicas_index', '_controller' => 'App\\Controller\\CaracteristicasController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/admin/caracteristicas/new' => [[['_route' => 'app_caracteristicas_new', '_controller' => 'App\\Controller\\CaracteristicasController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/produtos' => [[['_route' => 'app_produtos_index', '_controller' => 'App\\Controller\\ProdutosController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/produtos/new' => [[['_route' => 'app_produtos_new', '_controller' => 'App\\Controller\\ProdutosController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/teste' => [[['_route' => 'teste', '_controller' => 'App\\Controller\\TesteController::index'], null, null, null, false, false, null]],
         '/hello' => [[['_route' => 'hello', '_controller' => 'App\\Controller\\HelloController::index'], null, null, null, false, false, null]],
     ],
@@ -34,8 +38,18 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/teste/detalhes/([^/]++)(*:193)'
-                .'|/helloname/([^/]++)(*:220)'
+                .'|/admin/caracteristicas/([^/]++)(?'
+                    .'|(*:203)'
+                    .'|/edit(*:216)'
+                    .'|(*:224)'
+                .')'
+                .'|/produtos/([^/]++)(?'
+                    .'|(*:254)'
+                    .'|/edit(*:267)'
+                    .'|(*:275)'
+                .')'
+                .'|/teste/detalhes/([^/]++)(*:308)'
+                .'|/helloname/([^/]++)(*:335)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -46,8 +60,14 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        193 => [[['_route' => 'detalhes', '_controller' => 'App\\Controller\\TesteController::detalhes'], ['id'], null, null, false, true, null]],
-        220 => [
+        203 => [[['_route' => 'app_caracteristicas_show', '_controller' => 'App\\Controller\\CaracteristicasController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        216 => [[['_route' => 'app_caracteristicas_edit', '_controller' => 'App\\Controller\\CaracteristicasController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        224 => [[['_route' => 'app_caracteristicas_delete', '_controller' => 'App\\Controller\\CaracteristicasController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        254 => [[['_route' => 'app_produtos_show', '_controller' => 'App\\Controller\\ProdutosController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        267 => [[['_route' => 'app_produtos_edit', '_controller' => 'App\\Controller\\ProdutosController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        275 => [[['_route' => 'app_produtos_delete', '_controller' => 'App\\Controller\\ProdutosController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        308 => [[['_route' => 'detalhes', '_controller' => 'App\\Controller\\TesteController::detalhes'], ['id'], null, null, false, true, null]],
+        335 => [
             [['_route' => 'helloname', '_controller' => 'App\\Controller\\HelloController::helloname'], ['name'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
