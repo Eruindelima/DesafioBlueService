@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Categoria index{% endblock %}
+{% block title %}Categorias{% endblock %}
 
 {% block body %}
-    <h1>Categoria index</h1>
+    <h1 class="fs-5 text">Categorias</h1>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Nome</th>
-                <th>actions</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +19,8 @@
                 <td>{{ categorium.id }}</td>
                 <td>{{ categorium.nome }}</td>
                 <td>
-                    <a href="{{ path('app_categoria_show', {'id': categorium.id}) }}">show</a>
-                    <a href="{{ path('app_categoria_edit', {'id': categorium.id}) }}">edit</a>
+                    <a class="btn btn-outline-success" href="{{ path('app_categorias_show', {'id': categorium.id}) }}"><i class="bi-eye">Ver</i></a>
+                    <a class="btn btn-outline-primary"  href="{{ path('app_categorias_edit', {'id': categorium.id}) }}"><i class="bi-pencil">Editar</i></a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_categoria_new') }}">Create new</a>
+    <a class="btn btn-outline-success"href="{{ path('app_categorias_new') }}"><i class="bi-plus">Criar</i></a>
 {% endblock %}

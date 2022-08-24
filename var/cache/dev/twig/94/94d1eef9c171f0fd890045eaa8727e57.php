@@ -85,7 +85,7 @@ class __TwigTemplate_2f0039f2b0f350d13defc97dc45cb3d8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Produtos index</h1>
+        echo "    <h1 class=\"fs-5 text\">Produtos index</h1>
 
     <table class=\"table\">
         <thead>
@@ -190,7 +190,7 @@ class __TwigTemplate_2f0039f2b0f350d13defc97dc45cb3d8 extends Template
 {% block title %}Produtos index{% endblock %}
 
 {% block body %}
-    <h1>Produtos index</h1>
+    <h1 class=\"fs-5 text\">Produtos index</h1>
 
     <table class=\"table\">
         <thead>

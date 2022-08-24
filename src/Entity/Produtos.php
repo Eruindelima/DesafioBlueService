@@ -40,6 +40,10 @@ class Produtos
     {
         $this->produto_categoria = new ArrayCollection();
     }
+    
+    public function __toString() {
+        return $this->nome;
+    }
 
     public function getId(): ?int
     {
