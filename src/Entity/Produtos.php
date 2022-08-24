@@ -33,6 +33,9 @@ class Produtos
     #[ORM\ManyToMany(targetEntity: Categoria::class, inversedBy: 'produtos')]
     private Collection $produto_categoria;
 
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
+
     public function __construct()
     {
         $this->produto_categoria = new ArrayCollection();
@@ -124,6 +127,17 @@ class Produtos
     {
         $this->produto_categoria->removeElement($produtoCategorium);
 
+        return $this;
+    }
+
+    public function getSlug(): ?string  
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
         return $this;
     }
 }

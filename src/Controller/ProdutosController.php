@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/produtos')]
+#[Route('/admin/produtos')]
 class ProdutosController extends AbstractController
 {
     #[Route('/', name: 'app_produtos_index', methods: ['GET'])]
@@ -29,6 +29,8 @@ class ProdutosController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $produtoSlug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $produto->getNome())));
+            $produto->setSlug($produtoSlug);
             $produtosRepository->add($produto, true);
 
             return $this->redirectToRoute('app_produtos_index', [], Response::HTTP_SEE_OTHER);
