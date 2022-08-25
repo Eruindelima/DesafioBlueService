@@ -10,10 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/categoria')]
+#[Route('/admin/categorias')]
 class CategoriaController extends AbstractController
 {
-    #[Route('/', name: 'app_categoria_index', methods: ['GET'])]
+    #[Route('/', name: 'app_categorias_index', methods: ['GET'])]
     public function index(CategoriaRepository $categoriaRepository): Response
     {
         return $this->render('categoria/index.html.twig', [
@@ -21,7 +21,7 @@ class CategoriaController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_categoria_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'app_categorias_new', methods: ['GET', 'POST'])]
     public function new(Request $request, CategoriaRepository $categoriaRepository): Response
     {
         $categorium = new Categoria();
@@ -31,7 +31,7 @@ class CategoriaController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $categoriaRepository->add($categorium, true);
 
-            return $this->redirectToRoute('app_categoria_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_categorias_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('categoria/new.html.twig', [
@@ -40,7 +40,7 @@ class CategoriaController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_categoria_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_categorias_show', methods: ['GET'])]
     public function show(Categoria $categorium): Response
     {
         return $this->render('categoria/show.html.twig', [
@@ -48,7 +48,7 @@ class CategoriaController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_categoria_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/edit', name: 'app_categorias_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Categoria $categorium, CategoriaRepository $categoriaRepository): Response
     {
         $form = $this->createForm(CategoriaType::class, $categorium);
@@ -57,7 +57,7 @@ class CategoriaController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $categoriaRepository->add($categorium, true);
 
-            return $this->redirectToRoute('app_categoria_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_categorias_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('categoria/edit.html.twig', [
@@ -66,13 +66,13 @@ class CategoriaController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_categoria_delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'app_categorias_delete', methods: ['POST'])]
     public function delete(Request $request, Categoria $categorium, CategoriaRepository $categoriaRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$categorium->getId(), $request->request->get('_token'))) {
             $categoriaRepository->remove($categorium, true);
         }
 
-        return $this->redirectToRoute('app_categoria_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_categorias_index', [], Response::HTTP_SEE_OTHER);
     }
 }

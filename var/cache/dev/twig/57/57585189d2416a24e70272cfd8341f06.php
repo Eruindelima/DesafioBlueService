@@ -47,7 +47,7 @@ class __TwigTemplate_76ed7b6a8a023d6b5f38346c14ef6b07 extends Template
         // line 2
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, (isset($context["produto"]) || array_key_exists("produto", $context) ? $context["produto"] : (function () { throw new RuntimeError('Variable "produto" does not exist.', 2, $this->source); })()), "id", [], "any", false, false, false, 2))), "html", null, true);
         echo "\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-outline-danger\"><i class=\"bi bi-x\"></i>Excluir</button>
 </form>
 ";
         
@@ -77,7 +77,7 @@ class __TwigTemplate_76ed7b6a8a023d6b5f38346c14ef6b07 extends Template
     {
         return new Source("<form method=\"post\" action=\"{{ path('app_produtos_delete', {'id': produto.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ produto.id) }}\">
-    <button class=\"btn\">Delete</button>
+    <button class=\"btn btn-outline-danger\"><i class=\"bi bi-x\"></i>Excluir</button>
 </form>
 ", "produtos/_delete_form.html.twig", "/Users/eruindelimasilva/Desktop/dev/DesafioBlueService/templates/produtos/_delete_form.html.twig");
     }

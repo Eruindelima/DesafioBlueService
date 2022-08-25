@@ -26,6 +26,7 @@ class AppFixtures extends Fixture
         $produtos->setPreco(2000.99);
         $produtos->setCaracteristica($caracteristicas);
         $produtos->addProdutoCategorium($categoria); 
+        $produtos->setSlug('ps4');
 
         $manager->persist($caracteristicas);
         $manager->persist($categoria);

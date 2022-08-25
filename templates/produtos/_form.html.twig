@@ -1,4 +1,12 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <a class="btn btn-outline-primary my-2" href="{{ path('app_produtos_index') }}"><i class="bi bi-arrow-left"></i> Voltar</a>
+    <button class="btn btn-outline-primary"><i class="bi bi-arrow-right"></i> {{ button_label|default('Salvar') }}</button>
 {{ form_end(form) }}
+
+
+{# <style>
+#categoria > .mb-3:nth-child(2) {
+    display: none;
+}
+</style> #}
