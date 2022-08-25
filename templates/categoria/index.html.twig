@@ -19,8 +19,8 @@
                 <td>{{ categorium.id }}</td>
                 <td>{{ categorium.nome }}</td>
                 <td>
-                    <a class="btn btn-outline-success" href="{{ path('app_categorias_show', {'id': categorium.id}) }}"><i class="bi-eye">Ver</i></a>
-                    <a class="btn btn-outline-primary"  href="{{ path('app_categorias_edit', {'id': categorium.id}) }}"><i class="bi-pencil">Editar</i></a>
+                    <a class="btn btn-outline-success" href="{{ path('app_categorias_show', {'id': categorium.id}) }}"><i class="bi-eye"></i> Ver</a>
+                    <a class="btn btn-outline-primary"  href="{{ path('app_categorias_edit', {'id': categorium.id}) }}"><i class="bi-pencil"></i> Editar</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a class="btn btn-outline-success"href="{{ path('app_categorias_new') }}"><i class="bi-plus">Criar</i></a>
+    <a class="btn btn-outline-success" href="{{ path('app_categorias_new') }}"><i class="bi-plus"></i>Nova Categoria</a>
 {% endblock %}

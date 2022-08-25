@@ -1,6 +1,8 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn btn-outline-primary"><i class="bi-arrow-right"> {{ button_label|default('Salvar') }}</i></button>
+    <a class="btn btn-outline-primary  my-2" href="{{ path('app_categorias_index') }}"><i class="bi bi-arrow-left"></i> Voltar</a>
+
+    <button class="btn btn-outline-primary"> {{ button_label|default('Salvar') }} <i class="bi-arrow-right"></i></button>
 {{ form_end(form) }}
 
 

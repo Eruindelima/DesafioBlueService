@@ -1,13 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Caracteristicas{% endblock %}
+{% block title %}Editando Caracteristicas - {{ caracteristica.cor }}{% endblock %}
 
 {% block body %}
-    <h1>Edit Caracteristicas</h1>
+    <h1 class="fs-5 text">Editando uma Caracteristica</h1>
 
-    {{ include('caracteristicas/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_caracteristicas_index') }}">back to list</a>
-
+    {{ include('caracteristicas/_form.html.twig', {'button_label': 'Atualizar'}) }}
     {{ include('caracteristicas/_delete_form.html.twig') }}
 {% endblock %}

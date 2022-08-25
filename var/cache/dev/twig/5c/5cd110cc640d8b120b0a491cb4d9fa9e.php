@@ -79,14 +79,14 @@ class __TwigTemplate_d80f0cb9c48d9d02881d82338c395dff extends Template
             </a>
             <hr>
             <ul class=\"nav nav-pills flex-column mb-auto\">
-                <li>
+                <li> 
                     <a href=\"";
         // line 35
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produtos_index");
         echo "\" class=\"nav-link text-white\">
                         <svg class=\"bi pe-none me-2\" width=\"16\" height=\"16\">
                             <use xlink:href=\"#people-circle\"></use>
-                        </svg>
+                        </svg><i class=\"bi bi-basket\"></i>
                         Produtos
                     </a>
                     <a href=\"";
@@ -95,7 +95,7 @@ class __TwigTemplate_d80f0cb9c48d9d02881d82338c395dff extends Template
         echo "\" class=\"nav-link text-white\">
                         <svg class=\"bi pe-none me-2\" width=\"16\" height=\"16\">
                             <use xlink:href=\"#people-circle\"></use>
-                        </svg>
+                        </svg><i class=\"bi bi-list-ol\"></i>
                         Categorias
                     </a>
                     <a href=\"";
@@ -104,7 +104,7 @@ class __TwigTemplate_d80f0cb9c48d9d02881d82338c395dff extends Template
         echo "\" class=\"nav-link text-white\">
                         <svg class=\"bi pe-none me-2\" width=\"16\" height=\"16\">
                             <use xlink:href=\"#people-circle\"></use>
-                        </svg>
+                        </svg><i class=\"bi bi-receipt-cutoff\"></i>
                         Caracteristicas
                     </a>
                 </li>
@@ -272,23 +272,23 @@ class __TwigTemplate_d80f0cb9c48d9d02881d82338c395dff extends Template
             </a>
             <hr>
             <ul class=\"nav nav-pills flex-column mb-auto\">
-                <li>
+                <li> 
                     <a href=\"{{ path('app_produtos_index') }}\" class=\"nav-link text-white\">
                         <svg class=\"bi pe-none me-2\" width=\"16\" height=\"16\">
                             <use xlink:href=\"#people-circle\"></use>
-                        </svg>
+                        </svg><i class=\"bi bi-basket\"></i>
                         Produtos
                     </a>
                     <a href=\"{{ path('app_categorias_index') }}\" class=\"nav-link text-white\">
                         <svg class=\"bi pe-none me-2\" width=\"16\" height=\"16\">
                             <use xlink:href=\"#people-circle\"></use>
-                        </svg>
+                        </svg><i class=\"bi bi-list-ol\"></i>
                         Categorias
                     </a>
                     <a href=\"{{ path('app_caracteristicas_index') }}\" class=\"nav-link text-white\">
                         <svg class=\"bi pe-none me-2\" width=\"16\" height=\"16\">
                             <use xlink:href=\"#people-circle\"></use>
-                        </svg>
+                        </svg><i class=\"bi bi-receipt-cutoff\"></i>
                         Caracteristicas
                     </a>
                 </li>

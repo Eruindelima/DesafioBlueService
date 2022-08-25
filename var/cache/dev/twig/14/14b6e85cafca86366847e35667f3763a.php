@@ -46,14 +46,20 @@ class __TwigTemplate_daa8d19efe6fcc74a34ba6a196181f40 extends Template
         // line 2
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
         echo "
-    <button class=\"btn\">";
+    <a class=\"btn btn-outline-primary my-2\" href=\"";
         // line 3
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produtos_index");
+        echo "\"><i class=\"bi bi-arrow-left\"></i> Voltar</a>
+    <button class=\"btn btn-outline-primary\"><i class=\"bi bi-arrow-right\"></i> ";
+        // line 4
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 4, $this->source); })()), "Salvar")) : ("Salvar")), "html", null, true);
         echo "</button>
 ";
-        // line 4
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
+        // line 5
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), 'form_end');
         echo "
+
+
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -75,15 +81,22 @@ class __TwigTemplate_daa8d19efe6fcc74a34ba6a196181f40 extends Template
 
     public function getDebugInfo()
     {
-        return array (  55 => 4,  51 => 3,  47 => 2,  43 => 1,);
+        return array (  59 => 5,  55 => 4,  51 => 3,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+    <a class=\"btn btn-outline-primary my-2\" href=\"{{ path('app_produtos_index') }}\"><i class=\"bi bi-arrow-left\"></i> Voltar</a>
+    <button class=\"btn btn-outline-primary\"><i class=\"bi bi-arrow-right\"></i> {{ button_label|default('Salvar') }}</button>
 {{ form_end(form) }}
-", "produtos/_form.html.twig", "/Users/eruindelimasilva/Desktop/dev/DesafioBlueService/templates/produtos/_form.html.twig");
+
+
+{# <style>
+#categoria > .mb-3:nth-child(2) {
+    display: none;
+}
+</style> #}", "produtos/_form.html.twig", "/Users/eruindelimasilva/Desktop/dev/DesafioBlueService/templates/produtos/_form.html.twig");
     }
 }
