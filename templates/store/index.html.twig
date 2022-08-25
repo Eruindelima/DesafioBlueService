@@ -3,9 +3,31 @@
 {% block title %}Hello StoreController!{% endblock %}
 
 {% block body %}
+
+
     {% for produto in produtos %}
-        {{ produto.id }}
-        {{ produto.nome }}
+    <div class="container">
+    <div class="row">
+    <div class="col">
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ produto.nome }}</h5>
+            <p class="card-text">{{ produto.descricao }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Valor R$: {{ produto.preco }}</li>
+            <li class="list-group-item">Categoria do produto </li>
+            <li class="list-group-item">Caracteristicas do Produto  </li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link btn btn-outline-primary">Adicionar ao carrinho</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
     {% else %}
         no records found
     {% endfor %}
