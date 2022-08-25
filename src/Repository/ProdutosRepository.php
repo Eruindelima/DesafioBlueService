@@ -46,7 +46,17 @@ class ProdutosRepository extends ServiceEntityRepository
             ->andWhere('produto.slug = :val')
             ->setParameter('val', $slug)
             ->getQuery()
-            ->getOneOrNullResult(Query::HYDRATE_ARRAY);
+            ->getOneOrNullResult(Query::HYDRATE_OBJECT);
+    }
+
+    public function getProductsWithCategories()
+    {
+        return $this->createQueryBuilder('produto')
+            ->select('produto.id', 'produto.nome', 'produto.descricao', 'produto.imagem', 'produto.preco', 'produto.slug', 'caracteristicas.numero', 'caracteristicas.cor')
+            ->join(Categoria::class, 'categoria')
+            ->join(Caracteristicas::class, 'caracteristicas', null, null, null, 'caracteristica_id')
+            ->getQuery()
+            ->getResult(Query::HYDRATE_OBJECT);
     }
 
 //    /**

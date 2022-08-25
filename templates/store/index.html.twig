@@ -1,34 +1,46 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_loja.html.twig' %}
 
-{% block title %}Hello StoreController!{% endblock %}
+{% block title %}BlueService Store{% endblock %}
 
 {% block body %}
 
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for produto in produtos %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{produto.imagem}}" alt="{{produto.nome}}" class="img-thumbnail card-img-top" />
+                <div class="card-body">
+                    <p class="card-title fs-5 fw-semibold text">{{produto.nome}}</p>
+                    <p class="card-text">{{produto.descricao}}</p>
+                    <p class="card-text fw-semibold">R$ {{produto.preco|number_format(2, ',', '.')}}</p>
 
-    {% for produto in produtos %}
-    <div class="container">
-    <div class="row">
-    <div class="col">
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{ produto.nome }}</h5>
-            <p class="card-text">{{ produto.descricao }}</p>
+                    <div class="d-flex flex-column justify-content-between">
+                        <div>
+                            <span class="fw-semibold">Número: </span> {{produto.getCaracteristica.numero}}
+                        </div>
+
+                        <div>
+                            <span class="fw-semibold">Cor: </span> {{produto.getCaracteristica.cor}}
+                        </div>
+
+                        <div>
+                            <span class="fw-semibold">Categorias: </span>
+                            {% for categoria in produto.getProdutoCategoria() %}
+                                {{categoria.nome}}
+                            {% endfor %}
+                        </div>
+
+                        <a href="{{ path('app_store_view', {'slug': produto.slug}) }}" class="card-link btn btn-outline-primary mt-4">Adicionar ao carrinho</a>
+                    </div>
+
+                    
+                </div>
+            </div>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Valor R$: {{ produto.preco }}</li>
-            <li class="list-group-item">Categoria do produto </li>
-            <li class="list-group-item">Caracteristicas do Produto  </li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link btn btn-outline-primary">Adicionar ao carrinho</a>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    
-    {% else %}
+        {% else %}
         no records found
-    {% endfor %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

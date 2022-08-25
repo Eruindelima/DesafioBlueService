@@ -1,20 +1,33 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_loja.html.twig' %}
 
 {% block title %}produto{% endblock %}
 
 {% block body %}
-    <h1>produto</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ produto.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ produto.nome }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row">
+    <div class="col-5 col-xs-12">
+        <img src="{{produto.imagem}}" alt="{{produto.nome}}" class="img-thumbnail card-img-top" />
+    </div>
+
+    <div class="col-7">
+        <h1 class="fs-2">{{ produto.nome }}</h1>
+        <p class="fs-5 text">{{ produto.descricao }}</p>
+        <p class="fs-4 text">R$ {{produto.preco|number_format(2, ',', '.')}}</p>
+
+        <p>
+            <span class="fw-bolder">Cor: </span> {{ produto.getCaracteristica.cor }}
+            <br />
+            <span class="fw-bolder">Número: </span> {{ produto.getCaracteristica.numero }}
+        </p>
+
+
+        <p>
+            <span class="fw-bolder">Categorias: </span>
+            {% for categoria in produto.getProdutoCategoria() %}
+            {{categoria.nome}}
+            {% endfor %}
+        </p>
+
+    </div>
+</div>
 {% endblock %}
