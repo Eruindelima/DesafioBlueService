@@ -85,17 +85,12 @@ class __TwigTemplate_e0f8081ecdeee64ba78d739d92d2d9bf extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Produtos</h1>
+        echo "    <h1 class=\"fs-5 text\">Criar novo Produto</h1>
 
     ";
         // line 8
         echo twig_include($this->env, $context, "produtos/_form.html.twig");
         echo "
-
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produtos_index");
-        echo "\">back to list</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -117,7 +112,7 @@ class __TwigTemplate_e0f8081ecdeee64ba78d739d92d2d9bf extends Template
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +122,9 @@ class __TwigTemplate_e0f8081ecdeee64ba78d739d92d2d9bf extends Template
 {% block title %}New Produtos{% endblock %}
 
 {% block body %}
-    <h1>Create new Produtos</h1>
+    <h1 class=\"fs-5 text\">Criar novo Produto</h1>
 
     {{ include('produtos/_form.html.twig') }}
-
-    <a href=\"{{ path('app_produtos_index') }}\">back to list</a>
 {% endblock %}
 ", "produtos/new.html.twig", "/Users/eruindelimasilva/Desktop/dev/DesafioBlueService/templates/produtos/new.html.twig");
     }

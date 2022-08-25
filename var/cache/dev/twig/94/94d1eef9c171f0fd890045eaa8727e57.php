@@ -65,7 +65,7 @@ class __TwigTemplate_2f0039f2b0f350d13defc97dc45cb3d8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Produtos index";
+        echo "Produtos";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,17 +85,17 @@ class __TwigTemplate_2f0039f2b0f350d13defc97dc45cb3d8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Produtos index</h1>
+        echo "    <h1 class=\"fs-5 text\">Produtos</h1>
 
-    <table class=\"table\">
+    <table class=\"table table-striped\">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Nome</th>
                 <th>Descricao</th>
                 <th>Imagem</th>
                 <th>Preco</th>
-                <th>actions</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -128,14 +128,14 @@ class __TwigTemplate_2f0039f2b0f350d13defc97dc45cb3d8 extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produto"], "preco", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                 <td>
-                    <a href=\"";
+                    <a class=\"btn btn-outline-success\" href=\"";
             // line 28
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produtos_show", ["id" => twig_get_attribute($this->env, $this->source, $context["produto"], "id", [], "any", false, false, false, 28)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
+            echo "\"><i class=\"bi bi-eye\"></i> Ver</a>
+                    <a class=\"btn btn-outline-primary\"  href=\"";
             // line 29
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produtos_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["produto"], "id", [], "any", false, false, false, 29)]), "html", null, true);
-            echo "\">edit</a>
+            echo "\"><i class=\"bi bi-pencil\"></i> Editar</a>
                 </td>
             </tr>
         ";
@@ -155,10 +155,10 @@ class __TwigTemplate_2f0039f2b0f350d13defc97dc45cb3d8 extends Template
         echo "        </tbody>
     </table>
 
-    <a href=\"";
+    <a class=\"btn btn-outline-success\" href=\"";
         // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produtos_new");
-        echo "\">Create new</a>
+        echo "\"><i class=\"bi-plus\"></i>Novo Produto</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -187,20 +187,20 @@ class __TwigTemplate_2f0039f2b0f350d13defc97dc45cb3d8 extends Template
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Produtos index{% endblock %}
+{% block title %}Produtos{% endblock %}
 
 {% block body %}
-    <h1>Produtos index</h1>
+    <h1 class=\"fs-5 text\">Produtos</h1>
 
-    <table class=\"table\">
+    <table class=\"table table-striped\">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Nome</th>
                 <th>Descricao</th>
                 <th>Imagem</th>
                 <th>Preco</th>
-                <th>actions</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -212,8 +212,8 @@ class __TwigTemplate_2f0039f2b0f350d13defc97dc45cb3d8 extends Template
                 <td>{{ produto.imagem }}</td>
                 <td>{{ produto.preco }}</td>
                 <td>
-                    <a href=\"{{ path('app_produtos_show', {'id': produto.id}) }}\">show</a>
-                    <a href=\"{{ path('app_produtos_edit', {'id': produto.id}) }}\">edit</a>
+                    <a class=\"btn btn-outline-success\" href=\"{{ path('app_produtos_show', {'id': produto.id}) }}\"><i class=\"bi bi-eye\"></i> Ver</a>
+                    <a class=\"btn btn-outline-primary\"  href=\"{{ path('app_produtos_edit', {'id': produto.id}) }}\"><i class=\"bi bi-pencil\"></i> Editar</a>
                 </td>
             </tr>
         {% else %}
@@ -224,7 +224,7 @@ class __TwigTemplate_2f0039f2b0f350d13defc97dc45cb3d8 extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_produtos_new') }}\">Create new</a>
+    <a class=\"btn btn-outline-success\" href=\"{{ path('app_produtos_new') }}\"><i class=\"bi-plus\"></i>Novo Produto</a>
 {% endblock %}
 ", "produtos/index.html.twig", "/Users/eruindelimasilva/Desktop/dev/DesafioBlueService/templates/produtos/index.html.twig");
     }

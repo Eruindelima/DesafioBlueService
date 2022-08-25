@@ -65,7 +65,8 @@ class __TwigTemplate_ffe21c4f89422488db74741bde314ef4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Produtos";
+        echo "Produto - ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["produto"]) || array_key_exists("produto", $context) ? $context["produto"] : (function () { throw new RuntimeError('Variable "produto" does not exist.', 3, $this->source); })()), "nome", [], "any", false, false, false, 3), "html", null, true);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,7 +86,7 @@ class __TwigTemplate_ffe21c4f89422488db74741bde314ef4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Produtos</h1>
+        echo "    <h1 class=\"fs-5 text\">Produtos</h1>
 
     <table class=\"table\">
         <tbody>
@@ -127,15 +128,15 @@ class __TwigTemplate_ffe21c4f89422488db74741bde314ef4 extends Template
         </tbody>
     </table>
 
-    <a href=\"";
+    <a class=\"btn btn-outline-primary my-3\" href=\"";
         // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produtos_index");
-        echo "\">back to list</a>
+        echo "\"><i class=\"bi bi-arrow-left\"></i> Voltar</a>
 
-    <a href=\"";
+    <a class=\"btn btn-outline-primary my-3\" href=\"";
         // line 35
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produtos_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produto"]) || array_key_exists("produto", $context) ? $context["produto"] : (function () { throw new RuntimeError('Variable "produto" does not exist.', 35, $this->source); })()), "id", [], "any", false, false, false, 35)]), "html", null, true);
-        echo "\">edit</a>
+        echo "\"><i class=\"bi bi-pencil\"></i>Editar</a>
 
     ";
         // line 37
@@ -162,17 +163,17 @@ class __TwigTemplate_ffe21c4f89422488db74741bde314ef4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 37,  137 => 35,  132 => 33,  124 => 28,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  143 => 37,  138 => 35,  133 => 33,  125 => 28,  118 => 24,  111 => 20,  104 => 16,  97 => 12,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Produtos{% endblock %}
+{% block title %}Produto - {{ produto.nome }}{% endblock %}
 
 {% block body %}
-    <h1>Produtos</h1>
+    <h1 class=\"fs-5 text\">Produtos</h1>
 
     <table class=\"table\">
         <tbody>
@@ -199,9 +200,9 @@ class __TwigTemplate_ffe21c4f89422488db74741bde314ef4 extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_produtos_index') }}\">back to list</a>
+    <a class=\"btn btn-outline-primary my-3\" href=\"{{ path('app_produtos_index') }}\"><i class=\"bi bi-arrow-left\"></i> Voltar</a>
 
-    <a href=\"{{ path('app_produtos_edit', {'id': produto.id}) }}\">edit</a>
+    <a class=\"btn btn-outline-primary my-3\" href=\"{{ path('app_produtos_edit', {'id': produto.id}) }}\"><i class=\"bi bi-pencil\"></i>Editar</a>
 
     {{ include('produtos/_delete_form.html.twig') }}
 {% endblock %}

@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Produtos;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
 
 /**
  * @extends ServiceEntityRepository<Produtos>
@@ -37,6 +38,15 @@ class ProdutosRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function getBySlug(string $slug)
+    {
+        return $this->createQueryBuilder('produto')
+            ->andWhere('produto.slug = :val')
+            ->setParameter('val', $slug)
+            ->getQuery()
+            ->getOneOrNullResult(Query::HYDRATE_ARRAY);
     }
 
 //    /**

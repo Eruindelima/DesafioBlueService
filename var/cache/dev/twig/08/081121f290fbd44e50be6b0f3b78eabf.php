@@ -85,15 +85,15 @@ class __TwigTemplate_03f0af706e7a3f2c44d5d1279c3ae08c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Caracteristicas index</h1>
+        echo "    <h1 class=\"fs-5 text\">Caracteristicas</h1>
 
-    <table class=\"table\">
+    <table class=\"table table-striped\">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Numero</th>
                 <th>Cor</th>
-                <th>actions</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -118,14 +118,14 @@ class __TwigTemplate_03f0af706e7a3f2c44d5d1279c3ae08c extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caracteristica"], "cor", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
                 <td>
-                    <a href=\"";
+                    <a class=\"btn btn-outline-success\" href=\"";
             // line 24
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_caracteristicas_show", ["id" => twig_get_attribute($this->env, $this->source, $context["caracteristica"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
+            echo "\"><i class=\"bi-eye\"></i> Ver</a>
+                    <a class=\"btn btn-outline-primary\" href=\"";
             // line 25
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_caracteristicas_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["caracteristica"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">edit</a>
+            echo "\"><i class=\"bi-pencil\"></i> Editar</a>
                 </td>
             </tr>
         ";
@@ -145,10 +145,10 @@ class __TwigTemplate_03f0af706e7a3f2c44d5d1279c3ae08c extends Template
         echo "        </tbody>
     </table>
 
-    <a href=\"";
+    <a class=\"btn btn-outline-success\" href=\"";
         // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_caracteristicas_new");
-        echo "\">Create new</a>
+        echo "\"> <i class=\"bi-plus\"></i>Nova Caracteristica</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -180,15 +180,15 @@ class __TwigTemplate_03f0af706e7a3f2c44d5d1279c3ae08c extends Template
 {% block title %}Caracteristicas index{% endblock %}
 
 {% block body %}
-    <h1>Caracteristicas index</h1>
+    <h1 class=\"fs-5 text\">Caracteristicas</h1>
 
-    <table class=\"table\">
+    <table class=\"table table-striped\">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Numero</th>
                 <th>Cor</th>
-                <th>actions</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -198,8 +198,8 @@ class __TwigTemplate_03f0af706e7a3f2c44d5d1279c3ae08c extends Template
                 <td>{{ caracteristica.numero }}</td>
                 <td>{{ caracteristica.cor }}</td>
                 <td>
-                    <a href=\"{{ path('app_caracteristicas_show', {'id': caracteristica.id}) }}\">show</a>
-                    <a href=\"{{ path('app_caracteristicas_edit', {'id': caracteristica.id}) }}\">edit</a>
+                    <a class=\"btn btn-outline-success\" href=\"{{ path('app_caracteristicas_show', {'id': caracteristica.id}) }}\"><i class=\"bi-eye\"></i> Ver</a>
+                    <a class=\"btn btn-outline-primary\" href=\"{{ path('app_caracteristicas_edit', {'id': caracteristica.id}) }}\"><i class=\"bi-pencil\"></i> Editar</a>
                 </td>
             </tr>
         {% else %}
@@ -210,7 +210,7 @@ class __TwigTemplate_03f0af706e7a3f2c44d5d1279c3ae08c extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_caracteristicas_new') }}\">Create new</a>
+    <a class=\"btn btn-outline-success\" href=\"{{ path('app_caracteristicas_new') }}\"> <i class=\"bi-plus\"></i>Nova Caracteristica</a>
 {% endblock %}
 ", "caracteristicas/index.html.twig", "/Users/eruindelimasilva/Desktop/dev/DesafioBlueService/templates/caracteristicas/index.html.twig");
     }
