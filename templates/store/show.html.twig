@@ -1,6 +1,6 @@
 {% extends 'base_loja.html.twig' %}
 
-{% block title %}produto{% endblock %}
+{% block title %}Produto - {{ produto.nome }}{% endblock %}
 
 {% block body %}
 
@@ -20,14 +20,52 @@
             <span class="fw-bolder">Número: </span> {{ produto.getCaracteristica.numero }}
         </p>
 
-
         <p>
             <span class="fw-bolder">Categorias: </span>
             {% for categoria in produto.getProdutoCategoria() %}
             {{categoria.nome}}
             {% endfor %}
         </p>
+    </div>
+</div>
 
+<div class="row">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for produto_relacionados in produtos_relacionados %}
+        {% if(produto_relacionados.id != produto.id) %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{produto_relacionados.imagem}}" alt="{{produto_relacionados.nome}}" class="img-thumbnail card-img-top" />
+                <div class="card-body">
+                    <p class="card-title fs-5 fw-semibold text">{{produto_relacionados.nome}}</p>
+                    <p class="card-text fw-semibold">R$ {{produto_relacionados.preco|number_format(2, ',', '.')}}</p>
+
+                    <div class="d-flex flex-column justify-content-between">
+                        <div>
+                            <span class="fw-semibold">Número: </span> {{produto_relacionados.getCaracteristica.numero}}
+                        </div>
+
+                        <div>
+                            <span class="fw-semibold">Cor: </span> {{produto_relacionados.getCaracteristica.cor}}
+                        </div>
+
+                        <div>
+                            <span class="fw-semibold">Categorias: </span>
+                            {% for categoria in produto_relacionados.getProdutoCategoria() %}
+                           <a href="{{path('app_store_categoria_view', {'categoria': categoria.id})}}">{{categoria.nome}}</a>
+                            {% endfor %}
+                        </div>
+
+                        <a href="{{ path('app_store_view', {'slug': produto_relacionados.slug}) }}"
+                            class="card-link btn btn-outline-primary mt-4">Adicionar ao carrinho</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

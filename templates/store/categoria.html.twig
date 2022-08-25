@@ -1,9 +1,9 @@
 {% extends 'base_loja.html.twig' %}
-
+ 
 {% block title %}BlueService Store{% endblock %}
-
+ 
 {% block body %}
-
+ 
 <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% for produto in produtos %}
@@ -14,27 +14,27 @@
                     <p class="card-title fs-5 fw-semibold text">{{produto.nome}}</p>
                     <p class="card-text">{{produto.descricao}}</p>
                     <p class="card-text fw-semibold">R$ {{produto.preco|number_format(2, ',', '.')}}</p>
-
+ 
                     <div class="d-flex flex-column justify-content-between">
                         <div>
                             <span class="fw-semibold">Número: </span> {{produto.getCaracteristica.numero}}
                         </div>
-
+ 
                         <div>
                             <span class="fw-semibold">Cor: </span> {{produto.getCaracteristica.cor}}
                         </div>
-
+ 
                         <div>
                             <span class="fw-semibold">Categorias: </span>
                             {% for categoria in produto.getProdutoCategoria() %}
                                 <a href="{{path('app_store_categoria_view', {'categoria': categoria.id})}}">{{categoria.nome}}</a>
                             {% endfor %}
                         </div>
-
+ 
                         <a href="{{ path('app_store_view', {'slug': produto.slug}) }}" class="card-link btn btn-outline-primary mt-4">Adicionar ao carrinho</a>
                     </div>
-
-                    
+ 
+ 
                 </div>
             </div>
         </div>

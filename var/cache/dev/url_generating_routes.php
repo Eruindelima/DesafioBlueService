@@ -33,4 +33,5 @@ return [
     'app_produtos_delete' => [['id'], ['_controller' => 'App\\Controller\\ProdutosController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/produtos']], [], [], []],
     'app_store' => [[], ['_controller' => 'App\\Controller\\StoreController::index'], [], [['text', '/loja/']], [], [], []],
     'app_store_view' => [['slug'], ['_controller' => 'App\\Controller\\StoreController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/loja/produto']], [], [], []],
+    'app_store_categoria_view' => [['categoria'], ['_controller' => 'App\\Controller\\StoreController::showCategoria'], [], [['variable', '/', '[^/]++', 'categoria', true], ['text', '/loja/categoria']], [], [], []],
 ];

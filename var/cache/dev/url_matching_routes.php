@@ -58,7 +58,10 @@ return [
                         .'|(*:331)'
                     .')'
                 .')'
-                .'|/loja/produto/([^/]++)(*:363)'
+                .'|/loja/(?'
+                    .'|produto/([^/]++)(*:366)'
+                    .'|categoria/([^/]++)(*:392)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -78,8 +81,9 @@ return [
         310 => [[['_route' => 'app_produtos_show', '_controller' => 'App\\Controller\\ProdutosController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         323 => [[['_route' => 'app_produtos_edit', '_controller' => 'App\\Controller\\ProdutosController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         331 => [[['_route' => 'app_produtos_delete', '_controller' => 'App\\Controller\\ProdutosController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        363 => [
-            [['_route' => 'app_store_view', '_controller' => 'App\\Controller\\StoreController::show'], ['slug'], null, null, false, true, null],
+        366 => [[['_route' => 'app_store_view', '_controller' => 'App\\Controller\\StoreController::show'], ['slug'], null, null, false, true, null]],
+        392 => [
+            [['_route' => 'app_store_categoria_view', '_controller' => 'App\\Controller\\StoreController::showCategoria'], ['categoria'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

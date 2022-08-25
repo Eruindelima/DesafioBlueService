@@ -140,9 +140,11 @@ class __TwigTemplate_de914361ebee193e7525c3cca9ff6e89 extends Template
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["produto"], "getProdutoCategoria", [], "method", false, false, false, 29));
             foreach ($context['_seq'] as $context["_key"] => $context["categoria"]) {
                 // line 30
-                echo "                                ";
+                echo "                                <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_store_categoria_view", ["categoria" => twig_get_attribute($this->env, $this->source, $context["categoria"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+                echo "\">";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["categoria"], "nome", [], "any", false, false, false, 30), "html", null, true);
-                echo "
+                echo "</a>
                             ";
             }
             $_parent = $context['_parent'];
@@ -196,7 +198,7 @@ class __TwigTemplate_de914361ebee193e7525c3cca9ff6e89 extends Template
 
     public function getDebugInfo()
     {
-        return array (  176 => 44,  169 => 42,  156 => 34,  152 => 32,  143 => 30,  139 => 29,  131 => 24,  124 => 20,  117 => 16,  113 => 15,  109 => 14,  102 => 12,  98 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  178 => 44,  171 => 42,  158 => 34,  154 => 32,  143 => 30,  139 => 29,  131 => 24,  124 => 20,  117 => 16,  113 => 15,  109 => 14,  102 => 12,  98 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -230,7 +232,7 @@ class __TwigTemplate_de914361ebee193e7525c3cca9ff6e89 extends Template
                         <div>
                             <span class=\"fw-semibold\">Categorias: </span>
                             {% for categoria in produto.getProdutoCategoria() %}
-                                {{categoria.nome}}
+                                <a href=\"{{path('app_store_categoria_view', {'categoria': categoria.id})}}\">{{categoria.nome}}</a>
                             {% endfor %}
                         </div>
 
