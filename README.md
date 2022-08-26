@@ -3,7 +3,7 @@
 Este projeto consiste em ser uma loja virtual. 
 
 # Funções 
--Produtos
+- Produtos
   - Criar
   - Listar
   - Editar
