@@ -27,9 +27,9 @@ Assegure-se de ter instalado as tecnologias pontuadas anteriormente Depois de cl
 ```sh
  cd NomeDoProjeto
  composer install
- php bin/console make:entity  comando para gerar migration
- php bin/console make:migration  comando para executar migration
- php bin/console doctrine:fixtures:load  comando para executar as seeds
+ php bin/console make:entity  (comando para gerar migration)
+ php bin/console make:migration  (comando para executar migration)
+ php bin/console doctrine:fixtures:load  )comando para executar as seeds)
  symfony server:start (comando para rodar o server)
 ```
 Verifique a implantação navegando até o endereço do servidor em seu navegador preferido.
