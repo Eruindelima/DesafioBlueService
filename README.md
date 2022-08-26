@@ -7,7 +7,7 @@ Este projeto consiste em ser uma loja virtual.
 - Categorias 
   - Criar
   - listar
-- caracteristicas
+- Características
   - Criar 
   - listar
 -Loja
@@ -23,4 +23,10 @@ Este projeto consiste em ser uma loja virtual.
 
 # Instalação
 
-
+Assegure-se de ter instalado as tecnologias pontuadas anteriormente Depois de clonar o respositorio, execute os seguintes comandos.
+'''sh
+ [cd]()NomeDoProjeto
+ composer install
+ composer require symfony/orm-pack 
+ php bin/console doctrine:database:create  comando 
+'''
