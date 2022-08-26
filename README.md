@@ -16,10 +16,10 @@ Este projeto consiste em ser uma loja virtual.
 
 # Tecnologias envolvidas
 
-- [PHP] 8.1 
-- [composer] 
-- [pstgreess}
-- [Symfony]
+- [PHP]() 8.1 
+- [composer]() 
+- [pstgreess]()
+- [Symfony]()
 
 # Instalação
 
