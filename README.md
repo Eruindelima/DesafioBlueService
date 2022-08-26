@@ -27,6 +27,13 @@ Assegure-se de ter instalado as tecnologias pontuadas anteriormente Depois de cl
 ```sh
  [cd]()NomeDoProjeto
  composer install
- composer require symfony/orm-pack 
- php bin/console doctrine:database:create  comando 
+ php bin/console make:entity  comando para gerar migration
+ php bin/console make:migration  comando para executar migration
+ php bin/console doctrine:fixtures:load  comando para executar as seeds
+ symfony server:start (comando para rodar o server)
+```
+Verifique a implantação navegando até o endereço do servidor em seu navegador preferido.
+
+```sh
+127.0.0.1:8000
 ```
