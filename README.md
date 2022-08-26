@@ -25,7 +25,7 @@ Este projeto consiste em ser uma loja virtual.
 
 Assegure-se de ter instalado as tecnologias pontuadas anteriormente Depois de clonar o respositorio, execute os seguintes comandos.
 ```sh
- [cd]()NomeDoProjeto
+ cd NomeDoProjeto
  composer install
  php bin/console make:entity  comando para gerar migration
  php bin/console make:migration  comando para executar migration
